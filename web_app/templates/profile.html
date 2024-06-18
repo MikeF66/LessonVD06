@@ -38,7 +38,7 @@
     </style>
 </head>
 <body>
-    <div class="container text-center">
+    <div class="container text-center">  № центрированный контейнер
         <div class="row">
             <div class="col-md-6 offset-md-3">
                 <h2 class="my-4">Анкета</h2>
@@ -72,12 +72,12 @@
 
         <div class="container">
             <div class="row">
-                {% for card in cards[::-1] %}
+                {% for card in cards[::-1] %}  № список в обратном порядке
                     <div class="col-lg-6 col-md-6 col-sm-12 mb-2"">
                         <div class="card" style="width: 100%;">
                             <div class="card-body d-flex flex-column">
                                 <h5> <small class="text-body-secondary"> Имя: </small> {{ card.name }}</h5>
-                                {% if card.image_path %}
+                                {% if card.image_path %}  № если есть изображение, оно добавляется в карточку
                                     <div class="text-center mb-3">
                                         <img src="{{url_for('static', filename=card.image_path)}}"
                                              class="rounded" alt="photo"  style="max-width: 60%; height: auto;">
