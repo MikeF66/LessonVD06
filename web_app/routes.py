@@ -13,7 +13,7 @@ def profile():
         hobby = request.form.get('hobby')
         age = request.form.get('age')
         number = int(age)
-        if 11 <= number % 100 <= 14:
+        if 11 <= number % 100 <= 14:  # год-года-лет  
             suffix = "лет"
         elif number % 10 == 1:
             suffix = "год"
@@ -25,7 +25,7 @@ def profile():
             filename = secure_filename(image.filename)
             image_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             image.save(image_path)
-            image_path = os.path.join('uploads', filename).replace("\\", "/") # относительный путь для отображения
+            image_path = os.path.join('uploads', filename).replace("\\", "/") # относительный путь для отображения, замена обратного слэша
         else:
             image_path = None
         card = {
